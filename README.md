@@ -28,11 +28,12 @@ List the dependencies of the Analysis-functionality.
 
 1. Access to the Server containing the telemetrics in a csv file.
 2. Read Access to the Battery telemetrics data in a csv file.
-3. Information regarding the minimum and maximum thresholds of Battery telemetrics.
-4. Access of Date and Time Stamp information to record trends.
-5. Tools/ Libraries for the PDF generation.
-6. Access to the server to store the PDF reports generated weekly.
-7. Access to the Email receipents or any notification medium.
+3. Information to understand valid and invalid inputs in csv file
+4. Information regarding the breach threshold of Battery telemetrics.
+5. Access of Date and Time Stamp information to record trends.
+6. Tools/ Libraries for the PDF generation.
+7. Access to the server to store the PDF reports generated weekly.
+8. Access to the Email receipents or any notification medium.
 
 
 (add more if needed)
@@ -45,10 +46,10 @@ What is included in the software unit-test? What is not? Fill this table.
 |---------------------------|---------------|---
 Battery Data-accuracy       | No            | We do not test the accuracy of data
 Computation of maximum      | Yes           | This is part of the software being developed
-Off-the-shelf PDF converter | Yes           | Libraries can be used for PDF conversion.Hence it is a part of software being developed
+Off-the-shelf PDF converter | No            | Libraries can be used for PDF conversion.Hence it is tested as a fake function(Assuming actual PDF conversion cannot be checked)
 Counting the breaches       | Yes           | Total Occurance of number of breaches in a month is a part of the software being developed
 Detecting trends            | Yes           | Date & Time when the reading was continuously increasing for 30 minutes is recorded as part of the software being developed      
-Notification utility        | Yes           | Status of Notification sent to the mail receipent is a part of the software being developed
+Notification utility        | Yes           | Notification is triggered and Status of Notification sent to the mail receipent can be tested as a mock function(incase of Failure in notification sent)
 
 ### List the Test Cases
 
@@ -57,9 +58,10 @@ Write tests in the form of `<expected output or action>` from `<input>` / when `
 Add to these tests:
 
 1. Write minimum and maximum to the PDF from a csv containing positive and negative readings
-1. Write "Invalid input" to the PDF when the csv doesn't contain expected data
-1. _enter a test
-1. _enter a test
+2. Write "Invalid input" to the PDF when the csv doesn't contain expected data
+3. Check the total number of breaches occured in a month
+4. Write the record trends to the PDF
+5. Notify the mail receipent when new PDF report is available
 
 (add more)
 
