@@ -26,9 +26,14 @@ Notification must be sent when a new report is available.
 
 List the dependencies of the Analysis-functionality.
 
-1. Access to the Server containing the telemetrics in a csv file
-1. _enter dependency
-1. _enter dependency
+1. Access to the Server containing the telemetrics in a csv file.
+2. Read Access to the Battery telemetrics data in a csv file.
+3. Information regarding the minimum and maximum thresholds of Battery telemetrics.
+4. Access of Date and Time Stamp information to record trends.
+5. Tools/ Libraries for the PDF generation.
+6. Access to the server to store the PDF reports generated weekly.
+7. Access to the Email receipents or any notification medium.
+
 
 (add more if needed)
 
@@ -40,10 +45,10 @@ What is included in the software unit-test? What is not? Fill this table.
 |---------------------------|---------------|---
 Battery Data-accuracy       | No            | We do not test the accuracy of data
 Computation of maximum      | Yes           | This is part of the software being developed
-Off-the-shelf PDF converter | _enter Yes/No | _enter reasoning
-Counting the breaches       | _enter Yes/No | _enter reasoning
-Detecting trends            | _enter Yes/No | _enter reasoning
-Notification utility        | _enter Yes/No | _enter reasoning
+Off-the-shelf PDF converter | Yes           | Libraries can be used for PDF conversion.Hence it is a part of software being developed
+Counting the breaches       | Yes           | Total Occurance of number of breaches in a month is a part of the software being developed
+Detecting trends            | Yes           | Date & Time when the reading was continuously increasing for 30 minutes is recorded as part of the software being developed      
+Notification utility        | Yes           | Status of Notification sent to the mail receipent is a part of the software being developed
 
 ### List the Test Cases
 
