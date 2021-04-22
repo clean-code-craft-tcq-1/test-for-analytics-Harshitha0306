@@ -46,10 +46,10 @@ What is included in the software unit-test? What is not? Fill this table.
 |---------------------------|---------------|---
 Battery Data-accuracy       | No            | We do not test the accuracy of data
 Computation of maximum      | Yes           | This is part of the software being developed
-Off-the-shelf PDF converter | Yes           | Libraries can be used for PDF conversion. 
+Off-the-shelf PDF converter | No            | Tools/Libraries can be used for PDF conversion. Only PDF generation invocation can be checked via PDF generation Function call,but actual PDF conversion is not part of our test
 Counting the breaches       | Yes           | Total Occurance of number of breaches in a month is a part of the software being developed
 Detecting trends            | Yes           | Date & Time when the reading was continuously increasing for 30 minutes is recorded as part of the software being developed      
-Notification utility        | Yes           | Notification is triggered and Status of Notification sent to any medium can be tested as a mock function(incase of Failure in notification sent)
+Notification utility        | No            | Notification is triggered and Status of Notification sent to any medium can be tested as a mock function(incase of Failure in notification sent)
 
 ### List the Test Cases
 
@@ -85,8 +85,8 @@ Enter one part that's real and another part that's faked/mocked.
 |--------------------------|-------------- |-----------------------------|---
 Read input from server     | csv file      | internal data-structure     | Fake the server store
 Validate input             | csv data      | valid / invalid             | None - it's a pure function
-Notify report availability | pdf report    | mail notification           | Mock the mail notification with Fn call status
+Notify report availability | pdf report    | mail notification           | Mock the mail notification invocation with Fn call status
 Report inaccessible server |Server address | csv or pdf                  | mock server availiblity
 Find minimum and maximum   | csv data      | minimum and maximum values              | None - it's a pure function
 Detect trend               | csv data     |recorded trend with date and time stamp             | None - it's a pure function
-Write to PDF               | analysed csv file      | PDF report with min, max, breach count and trend data                 | Mock the PDF conversion with Fn call status
+Write to PDF               | analysed csv file      | PDF report with min, max, breach count and trend data                 | Mock the PDF conversion invocation with Fn call status
